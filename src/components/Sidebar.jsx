@@ -12,15 +12,15 @@ export default function Sidebar() {
         id="offcanvas"
         aria-labelledby="offcanvasLabel"
         data-bs-backdrop="false">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasLabel">
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title" id="offcanvasLabel">
             Offcanvas
           </h5>
         </div>
         <div className="offcanvas-body">
           <ul>
-            <li>Home</li>
-            <Link to="/daftarmember">Daftar Member</Link>
+            <li>Link</li>
+            <li><Link to="/daftarmember">Daftar Member</Link></li>
           </ul>
         </div>
       </div>

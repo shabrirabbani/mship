@@ -8,31 +8,28 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './pages/Login.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import DaftarMember from './pages/DaftarMember.jsx'
+import FormInput from './components/FormInput.jsx'
 
 const route = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    // children: [
-    //   {
-    //     path: 'login',
-    //     element: <Login />
-    //   }
-    // ]
-  },
-  {
-    path: 'login',
-    element: <Login />
   },
   {
     path: 'dashboard',
     element: <Dashboard/>,
     children: [
       {
-        path: 'daftarmember',
-        element: <DaftarMember />
-      }]
+        path: 'add-member',
+        element: <FormInput />
+      }
+    ]
+  },
+  {
+    path: 'login',
+    element: <Login/>
   }
+  
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
