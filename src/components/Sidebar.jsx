@@ -1,5 +1,6 @@
 import React from 'react'
 import { IconMenu2 } from '@tabler/icons-react'
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   return (
@@ -9,7 +10,8 @@ export default function Sidebar() {
         style={{width: "230px"}}
         tabindex="-1"
         id="offcanvas"
-        aria-labelledby="offcanvasLabel">
+        aria-labelledby="offcanvasLabel"
+        data-bs-backdrop="false">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasLabel">
             Offcanvas
@@ -18,7 +20,7 @@ export default function Sidebar() {
         <div className="offcanvas-body">
           <ul>
             <li>Home</li>
-            <li>Daftar Member</li>
+            <Link to="/daftarmember">Daftar Member</Link>
           </ul>
         </div>
       </div>

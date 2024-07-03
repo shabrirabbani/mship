@@ -7,6 +7,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './pages/Login.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import DaftarMember from './pages/DaftarMember.jsx'
 
 const route = createBrowserRouter([
   {
@@ -25,7 +26,12 @@ const route = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: <Dashboard/>
+    element: <Dashboard/>,
+    children: [
+      {
+        path: 'daftarmember',
+        element: <DaftarMember />
+      }]
   }
 ])
 
