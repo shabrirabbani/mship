@@ -9,33 +9,30 @@ const MemberList = () => {
         {name: 'Eter Nakal', email: 'eter@example.com', phone: '08952764272'}
     ])
 
-    const navigate = useNavigate()
+    const [editingMember, setEditingMember] = useState(null)
 
     const addMember = (newMember) => {
         setMembers([...members, newMember])
     }
 
-    const handleAddMember = () => {
-        // event.preventDefault()
-        navigate('/dashboard/add-member')
+    const editMember = (member) => {
+        setEditingMember(member)
     }
 
     return (
-        <div className="container">
-            <h1 className="my-4">All Member</h1>
-            
-            <div className="row">
-                {members.map((member, index) => (
-                    <div className="col-md-4" key={index}>
-                        <CardMember member={member} />
-                    </div>
-                ))}
+      <div className="">
+        <FormInput addMember={addMember} editingMember={editingMember}/>
+        <h3 className="text-center mt-5 underline-dark">All Member</h3>
+        <div className="row text-center my-5">
+          {members.map((member, index) => (
+            <div className="col-md-4 " key={index}>
+              <CardMember member={member} editMember={editMember}/>
             </div>
-            {/* <button type="button" className='btn btn-primary mb-4' onClick={handleAddMember}>Add Member</button> */}
-
-            <FormInput addMember={addMember} />
+          ))}
         </div>
-    )
+        {/* <button type="button" className='btn btn-primary mb-4' onClick={handleAddMember}>Add Member</button> */}
+      </div>
+    );
 }
 
 export default MemberList

@@ -1,19 +1,27 @@
 import React from 'react'
-import Sidebar from '../components/Sidebar'
-import CardMember from '../components/CardMember';
 import MemberList from '../components/MemberList';
-import { Outlet } from 'react-router-dom';
+import { IconPower } from '@tabler/icons-react';
+import {useNavigate} from "react-router-dom";
 
 export default function Dashboard() {
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/');
+  }
+
   return (
     <div className="container">
-      <div className='ms-5'>
-        {/* <Sidebar /> */}
-        <div className='' style={{marginLeft: "150px"}}>
-          <h1>Dashboard</h1>
-          <MemberList/>
-          <Outlet />
+      <div className="mt-5">
+        <div className="d-flex justify-content-between">
+          <h1 className="mx-2 mb-3">Dashboard</h1>
+          <button className='btn btn-white' onClick={handleLogout}>
+            <IconPower />
+          </button>
         </div>
+
+        <MemberList />
       </div>
     </div>
   );

@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import Dashboard from '../pages/Dashboard';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function CardLogin() {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     const handleLogin = (event) => {
         event.preventDefault(); 
         setIsLoggedIn(true);
-        window.location.href = '/dashboard'
+        navigate('/dashboard');
     }
 
   return (
@@ -22,7 +22,7 @@ export default function CardLogin() {
                 <label name="password" className="form-label">Password</label>
                 <input type="password" id="password" className="form-control"/>
             </div>
-            <button type="submit" className="btn btn-primary" onClick={handleLogin}>Login</button>
+            <button type="submit" className="btn btn-dark" onClick={handleLogin}>Login</button>
         </form>
     </div>
   )

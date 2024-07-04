@@ -8,7 +8,7 @@ export default function Login() {
       <div className="d-flex justify-content-center min-vh-100">
         <div className="row align-items-center">
           <div className="col">
-            <h1>Join To Membership</h1>
+            <h1>Join to Membership</h1>
           </div>
           <div className="col">
             <CardLogin />
